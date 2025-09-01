@@ -1,4 +1,28 @@
-import { NetworkGraph } from './components/NetworkGraph.tsx';
+import { NetworkGraphLinks } from './components/NetworkGraphLinks.tsx';
+import { links } from 'tasks/task1/solutionAsMap';
+import { nodes, TreeNode } from 'tasks/task1/solutionAsTreeNode.ts';
+import { Link } from 'tasks/task1/task1.types.ts';
+
+// Функция для конвертации TreeNode[] в Link[]
+function convertTreeNodesToLinks(nodes: TreeNode[]): Link[] {
+  const links: Link[] = [];
+
+  nodes.forEach(node => {
+    node.neighbors.forEach(neighbor => {
+      // Предполагается, что сервер имеет свойство id, которое соответствует типу from/to в Link
+      const link: Link = {
+        from: node.server,
+        to: neighbor.node.server,
+        packetLossPercentage: neighbor.link.packetLossPercentage,
+        nominalCapacity: neighbor.link.nominalCapacity,
+      };
+      links.push(link);
+    });
+  });
+
+  return links;
+}
+
 
 const Task1Page = () => {
   return (
@@ -7,7 +31,8 @@ const Task1Page = () => {
         <h1 className="text-4xl font-bold text-gray-900 mb-6">
           Task1Page
         </h1>
-        <NetworkGraph />
+        <NetworkGraphLinks links={links} />
+        <NetworkGraphLinks links={convertTreeNodesToLinks(nodes)} />
       </main>
     </div>
   );

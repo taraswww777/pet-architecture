@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Layer, Stage } from 'react-konva';
 import { calculateLayout, GraphData } from '../utils/graphLayout';
-import { links } from 'tasks/task1/solutionAsMap';
 import { NetworkGraphNode } from './NetworkGraphNode';
 import { Badge, BadgeVariant } from '../../../uiKit/Badge';
 import { Button } from '../../../uiKit/Button';
 import { NetworkGraphLink } from './NetworkGraphLink.tsx';
+import type { Link } from 'tasks/task1/task1.types.ts';
 
-export const NetworkGraph: React.FC = () => {
+interface NetworkGraphProps {
+  links: Link[];
+}
+
+export const NetworkGraphLinks: React.FC<NetworkGraphProps> = ({links}) => {
   const [graphData, setGraphData] = useState<GraphData | null>(null);
   const [containerSize, setContainerSize] = useState({ width: 800, height: 600 });
 
