@@ -1,0 +1,24 @@
+{
+  "name": "pet-architecture",
+  "version": "1.0.0",
+  "description": "- [Практическое задание 1](./task1/task1.md)",
+  "main": "index.js",
+  "scripts": {
+    "run:task1": "tsx --watch ./task1/solutionAsMap.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taraswww777/pet-architecture.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taraswww777/pet-architecture/issues"
+  },
+  "homepage": "https://github.com/taraswww777/pet-architecture#readme",
+  "devDependencies": {
+    "tsx": "4.20.5",
+    "typescript": "5.9.2"
+  }
+}
