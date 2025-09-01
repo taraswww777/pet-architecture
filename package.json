@@ -1,10 +1,14 @@
 {
   "name": "pet-architecture",
   "version": "1.0.0",
-  "description": "- [Практическое задание 1](./task1/task1.md)",
-  "main": "index.js",
+  "description": "Практические задания по архитектуре",
+  "type": "module",
+  "workspaces": [
+    "fe",
+    "tasks"
+  ],
   "scripts": {
-    "run:task1": "tsx --watch ./task1/solutionAsMap.ts"
+    "run:task1": "tsx --watch tasks/task1/solutionAsMap.ts"
   },
   "repository": {
     "type": "git",

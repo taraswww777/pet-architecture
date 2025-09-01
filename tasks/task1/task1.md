@@ -8,4 +8,4 @@
 
 Код обоих вариантов решения задачи необходимо прикрепить к ответу.
 
-![zadanie_osnovnye_algoritmy.png](./zadanie_osnovnye_algoritmy.png)
+![zadanie_osnovnye_algoritmy.png](zadanie_osnovnye_algoritmy.png)
