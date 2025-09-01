@@ -26,7 +26,7 @@ export const Badge = forwardRef<HTMLSpanElement, PropsWithChildren<BadgeProps>>(
   }, ref) => {
 
     // Динамически формируем классы
-    const baseClasses = 'inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium';
+    const baseClasses = 'inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium';
     const variantClass = variantClasses[variant] || variantClasses[BadgeVariant.NEUTRAL];
 
     return (

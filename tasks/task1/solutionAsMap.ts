@@ -1,8 +1,8 @@
-interface Server {
+export interface Server {
   name: string;
 }
 
-interface Link {
+export interface Link {
   from: Server;
   to: Server;
   /** процент потерянных пакетов */
