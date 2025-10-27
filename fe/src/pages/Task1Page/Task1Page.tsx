@@ -1,7 +1,7 @@
 import { NetworkGraphLinks } from './components/NetworkGraphLinks.tsx';
-import { links } from 'tasks/task1/solutionAsMap';
-import { nodes, TreeNode } from 'tasks/task1/solutionAsTreeNode.ts';
-import { Link } from 'tasks/task1/task1.types.ts';
+import { links } from 'tasks/task1/try1/solutionAsMap.ts';
+import { nodes, TreeNode } from 'tasks/task1/try1/solutionAsTreeNode.ts';
+import { Link } from 'tasks/task1/try1/task1.types.ts';
 
 // Функция для конвертации TreeNode[] в Link[]
 function convertTreeNodesToLinks(nodes: TreeNode[]): Link[] {

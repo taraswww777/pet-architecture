@@ -5,7 +5,7 @@ import { NetworkGraphNode } from './NetworkGraphNode';
 import { Badge, BadgeVariant } from '../../../uiKit/Badge';
 import { Button } from '../../../uiKit/Button';
 import { NetworkGraphLink } from './NetworkGraphLink.tsx';
-import type { Link } from 'tasks/task1/task1.types.ts';
+import type { Link } from 'tasks/task1/try1/task1.types.ts';
 
 interface NetworkGraphProps {
   links: Link[];

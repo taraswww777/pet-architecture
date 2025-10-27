@@ -7,7 +7,7 @@ import {
   SimulationLinkDatum,
   SimulationNodeDatum,
 } from 'd3-force';
-import { Link, Server } from 'tasks/task1/task1.types.ts';
+import { Link, Server } from 'tasks/task1/try1/task1.types.ts';
 
 export interface GraphNode extends Server, SimulationNodeDatum {
   id: string;
