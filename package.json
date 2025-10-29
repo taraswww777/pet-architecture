@@ -8,7 +8,7 @@
     "tasks"
   ],
   "scripts": {
-    "run:task1": "tsx --watch tasks/task1/solutionAsMap.ts"
+    "task1": "npm -w=tasks run task1"
   },
   "repository": {
     "type": "git",
