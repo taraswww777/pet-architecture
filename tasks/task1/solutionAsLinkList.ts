@@ -78,6 +78,7 @@ F.addConnection(E, 300, 85);
 
 
 // сложим всё в массив
+/** 1. Представление узлами */
 const allNodes: BaseNode[] = [A, B, C, D, E, F];
 
 // Теперь у нас есть связанный список
@@ -87,7 +88,7 @@ const allNodes: BaseNode[] = [A, B, C, D, E, F];
 
 // Теперь нужно преобразовать наши данные в матричный вид
 
-type Matrix = Array<Array<BaseNode | null>>;
+type Matrix = Array<Array<Omit<BaseNode,'connections'> | null>>;
 
 const nodesToMatrix = (nodes: BaseNode[]): Matrix => {
   const indexMap = new Map();
@@ -105,39 +106,21 @@ const nodesToMatrix = (nodes: BaseNode[]): Matrix => {
   nodes.forEach((node) => {
     const fromIndex = indexMap.get(node);
 
-    node.connections.forEach(connection => {
-      const toIndex = indexMap.get(connection.target);
-      matrix[fromIndex][toIndex] = connection;
+    node.connections.forEach(({ target, ...props }) => {
+      const toIndex = indexMap.get(target);
+      // Тут можно сделать и точнее явно указав bandWith и lostPerson,
+      // но язык позволяет в этом месте срезать
+      matrix[fromIndex][toIndex] = props;
     })
   });
 
   return matrix;
 }
 
+/** 2. Представление массивом (матрица смежности) */
 const matrix: Matrix = nodesToMatrix(allNodes);
 
-// теперь мы можем работать с matrix
 
-
-// Вспомогательная функция для вывода матрицы
-function printMatrix(matrix) {
-  console.log('Матрица смежности:');
-
-  matrix.forEach((row) => {
-    const rowStr:string[] = [];
-    row.forEach(cell => {
-      if (cell) {
-        rowStr.push(`{ ${Object.keys(cell).map((k) => cell[k]).filter(v => typeof v !== 'object').join(',')} }`);
-      } else {
-        rowStr.push(` ${cell} `);
-      }
-    });
-    console.log(rowStr.join(', '));
-  });
-}
-
-printMatrix(matrix);
-
-// console.log('nodesToMatrix:', matrix)
-
+console.log('allNodes:', allNodes)
+console.log('matrix:', matrix)
 
