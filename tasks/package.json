@@ -1,3 +1,6 @@
 {
-  "name": "tasks"
+  "name": "tasks",
+  "scripts": {
+    "task2": "tsx --watch task2/findMaxMin.ts"
+  }
 }
