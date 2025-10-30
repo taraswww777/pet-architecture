@@ -5,9 +5,13 @@ false && generateAndWriteRandomNumbersToFile();
 
 type FindMaxMinResult = { max: number, min: number }
 
-const findMaxMin = (listNumbers: number[]): FindMaxMinResult => {
+export const findMaxMin = (listNumbers: number[]): FindMaxMinResult => {
   let max: number = listNumbers[0];
   let min: number = listNumbers[0];
+
+  if (listNumbers.length===1){
+    return { max, min }
+  }
 
   const count = listNumbers.length / 2;
 
