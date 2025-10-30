@@ -6,6 +6,8 @@ false && generateAndWriteRandomNumbersToFile();
 type FindMaxMinResult = { max: number, min: number }
 
 export const findMaxMin = (listNumbers: number[]): FindMaxMinResult => {
+  if (listNumbers.length === 0) throw new Error('Array is empty');
+
   let max: number = listNumbers[0];
   let min: number = listNumbers[0];
 
@@ -19,16 +21,21 @@ export const findMaxMin = (listNumbers: number[]): FindMaxMinResult => {
     const elBegin = listNumbers[iBegin];
     const elEnd = listNumbers[iEnd];
 
-    if (elBegin > max) {
-      max = elBegin;
-    } else if (elBegin < min) {
-      min = elBegin;
-    }
 
-    if (elEnd > max) {
-      max = elEnd;
-    } else if (elEnd < min) {
-      min = elEnd;
+    if (elBegin > elEnd){
+      if (elBegin > max) {
+        max = elBegin;
+      }
+      if (elEnd < min) {
+        min = elEnd;
+      }
+    } else {
+      if (elEnd > max) {
+        max = elEnd;
+      }
+      if (elBegin < min) {
+        min = elBegin;
+      }
     }
   }
 
