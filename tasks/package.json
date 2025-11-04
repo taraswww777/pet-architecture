@@ -1,6 +1,7 @@
 {
   "name": "tasks",
   "scripts": {
-    "task1": "tsx --watch task1/solutionAsLinkList.ts"
+    "task1": "tsx --watch task1/solutionAsLinkList.ts",
+    "task3": "tsx --watch task3/task3Run.ts"
   }
 }
