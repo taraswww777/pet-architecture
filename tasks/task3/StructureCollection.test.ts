@@ -40,6 +40,8 @@ describe('StructureCollection', () => {
         collection.addItem(3);
         collection.addItem(8);
         expect(collection.has(5)).toBe(true);
+        expect(collection.has(3)).toBe(true);
+        expect(collection.has(8)).toBe(true);
         expect(collection.has(10)).toBe(false);
     });
 

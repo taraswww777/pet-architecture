@@ -19,26 +19,12 @@ export class StructureCollection<TItem = number> {
     })
   }
 
-  addListItems(items:TItem[]){
-    if(items.length === 0){
-      return;
-    }
-    items.forEach(this.addItem)
-  }
-
   get listData() {
     return this.__listData;
   }
 
-  hasItem(index: number): boolean {
-    if (this.__listData.length >= index) {
-      return true;
-    }
-    return false;
-  }
-
   has(value:TItem):boolean{
-    return this.findIndexByValue(value) === 1
+    return this.findIndexByValue(value) !== -1
   }
 
   getItem(index: number) {
