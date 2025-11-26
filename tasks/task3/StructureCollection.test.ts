@@ -61,9 +61,19 @@ describe('StructureCollection', () => {
         expect(collection.getItem(2)).toBeUndefined();
     });
 
-    test('сложность операций', () => {
-        // Здесь можно добавить тесты для проверки сложности операций,
-        // но это требует более сложной инфраструктуры для замера времени выполнения.
-        // Для простоты пропустим этот шаг.
+    test('добавление элемента в правильном порядке', () => {
+        const numbers = [3, 5, 8, 10, 10, 11, 19, 20];
+
+        collection.addItem(numbers[1]);
+        collection.addItem(numbers[3]);
+        collection.addItem(numbers[2]);
+        collection.addItem(numbers[5]);
+        collection.addItem(numbers[0]);
+        collection.addItem(numbers[4]);
+        collection.addItem(numbers[7]);
+        collection.addItem(numbers[6]);
+
+        const listData = JSON.stringify(collection.listData);
+        expect(listData).toBe(JSON.stringify(numbers));
     });
 });
