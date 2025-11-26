@@ -1,3 +1,6 @@
 {
-  "name": "tasks"
+  "name": "tasks",
+  "scripts": {
+    "task1": "tsx --watch task1/solutionAsLinkList.ts"
+  }
 }
