@@ -8,7 +8,8 @@
     "tasks"
   ],
   "scripts": {
-    "task1": "npm -w=tasks run task1"
+    "task1": "npm -w=tasks run task1",
+    "task2": "npm -w=tasks run task2"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,10 @@
   },
   "homepage": "https://github.com/taraswww777/pet-architecture#readme",
   "devDependencies": {
+    "@faker-js/faker": "10.1.0",
     "@types/d3-force": "3.0.10",
     "@types/lodash": "4.17.20",
+    "@types/node": "24.9.2",
     "d3-force": "3.0.0",
     "konva": "9.3.22",
     "lodash": "4.17.21",
